@@ -1,4 +1,5 @@
-srlplayer
+barebones_server
 =========
 
-Visit http://srl.takbytes.com to see this app live.
+This is a small nodejs webserver using express framework. 
+I hope this is useful for those wanting to start their own nodejs webserver.
