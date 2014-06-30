@@ -1,0 +1,66 @@
+/* get rid top and side white space bars using margin and height */
+
+body 
+{
+margin: 25px 0px 25px;
+padding: 0px;
+}
+
+
+#container
+{
+margin:0px auto;
+overflow:hidden;
+text-align:left;
+background-color:black;
+}
+
+#header
+{
+margin:0px auto;
+width: 100px;
+height: 100px;
+background-color:grey;
+float:left;
+position: relative;
+}
+
+#left
+{
+width: 100px;
+height: 100px;
+background-color:red;
+float:left;
+position: relative;
+}   
+
+#center
+{
+width: 100px;
+height: 100px;
+background-color:green;
+
+float:left;
+position: relative;
+}
+
+#right
+{
+width: 100px;
+height: 100px;
+background-color:lightblue;
+
+float:left;
+position: relative;
+}
+
+#footer
+{
+width: 100px;
+height: 100px;
+background-color:brown;
+
+float:left;
+position: relative;
+}
+

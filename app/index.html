@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta content='text/html; charset=utf-8' http-equiv='content-type'>
+        <title>Template</title>
+        <link rel='stylesheet' href='css/main.css'>
+        <script src='js/jquery-2.0.3.min.js'></script>
+
+<script>
+    function calcResolutions() {
+        var offset = 25; //Height for our header and footer
+        var heightOffset = 50;
+        
+        var currWinWidth = $(window).width();
+        var currWinHeight = $(window).height();
+        
+        var containerWidth = (.54 * currWinWidth);
+        var containerHeight = (currWinHeight - heightOffset);
+        
+        var headerPanelWidth = Math.floor(.54 * currWinWidth);
+        var headerPanelHeight = Math.floor(offset);
+        
+        var leftPanelWidth = Math.floor(0.07 * currWinWidth);
+        var leftPanelHeight = Math.floor(currWinHeight - offset*2 - heightOffset);
+        
+        var rightPanelWidth = Math.floor(0.07 * currWinWidth);
+        var rightPanelHeight = Math.floor(currWinHeight - offset*2 - heightOffset);
+        
+        var centerPanelWidth = Math.floor(0.40 * currWinWidth);
+        var centerPanelHeight = Math.floor(currWinHeight - offset*2 - heightOffset);
+        
+        var footerPanelWidth = Math.floor(.54 * currWinWidth);
+        var footerPanelHeight = Math.floor(offset);
+        
+        return {
+                containerW: containerWidth, containerH: containerHeight,
+                headerW: headerPanelWidth, headerH: headerPanelHeight,
+                footerW: footerPanelWidth, footerH: footerPanelHeight,
+                leftW: leftPanelWidth, leftH: leftPanelHeight,
+                rightW: rightPanelWidth, rightH: rightPanelHeight,
+                centerW: centerPanelWidth, centerH: centerPanelHeight
+                };
+    }
+
+    function applyResolutions() {
+        res = calcResolutions();
+        $('#container').css('width', res.containerW);
+        $('#container').css('height', res.containerH);
+        
+        $('#header').css('width',res.headerW);
+        $('#header').css('height',res.headerH);
+
+        $('#left').css('width', res.leftW);
+        $('#left').css('height', res.leftH);        
+
+        $('#right').css('width', res.rightW);
+        $('#right').css('height', res.rightH);      
+
+        $('#center').css('width', res.centerW);
+        $('#center').css('height', res.centerH);
+        
+        $('#footer').css('width', res.footerW);
+        $('#footer').css('height', res.footerH);
+    }   
+    
+    function showDebugResolutions() {
+        $('#leftInfoDebug').text(' ( '
+                    + $('#left').width() + 'x' + $('#left').height() + ' )');
+
+        $('#rightInfoDebug').text(' ( '
+                    + $('#right').width() + 'x' + $('#right').height() + ' )');             
+                    
+        $('#centerInfoDebug').text(' ( ' 
+                    + $('#center').width() + ' x ' + $('#center').height() + ' )'); 
+
+        $('#headerInfoDebug').text(' ( ' 
+                    + $('#header').width() + ' x ' + $('#header').height() + ' )'); 
+
+        $('#footerInfoDebug').text(' ( ' 
+                    + $('#footer').width() + ' x ' + $('#footer').height() + ' )'); 
+    }
+
+    function disableVerticalScrolling() {
+        $('html, body').css({
+            'overflow': 'hidden',
+            'height': '100%'
+        })  
+    }
+
+    function disableHorizontalScrolling() {
+        $("jqueryselector").css("overflow-x","hidden"); //hide horizontal scrollbar 
+    }
+    
+    $( document ).ready(function() {
+        disableVerticalScrolling();
+        disableHorizontalScrolling();
+        applyResolutions();
+        showDebugResolutions();
+    });
+
+</script>
+        
+<style type='text/css'>
+    #centerInfoDebug{
+        position: absolute;
+        border:1px solid blue;
+        width:100px;
+    }
+    
+    #leftInfoDebug{
+        position: absolute;
+        border:1px solid blue;
+        width:100px;
+    }
+    
+    #rightInfoDebug{
+        position: absolute;
+        border:1px solid blue;
+        width:100px;
+    }
+    
+    #headerInfoDebug{
+        position: absolute;
+        border:1px solid blue;
+        width:100px;
+    }
+    
+    #footerInfoDebug{
+        position: absolute;
+        border:1px solid blue;
+        width:100px;
+    }
+</style>
+
+    </head>
+    <body>
+            
+        <div id='container'>
+
+            <div id='header' >
+                <div id='headerInfoDebug'></div>
+            </div>              
+        
+            <div id='left' class='panel'>
+                <div id='leftInfoDebug'></div>      
+            </div>
+
+            <div id='center' class='panel'>
+                <div id='centerInfoDebug'></div>
+            </div>  
+            
+            <div id='right' class='panel'>
+                <div id='rightInfoDebug'></div>
+            </div>  
+            
+            <div id='footer' class='panel'>
+                <div id='footerInfoDebug'></div>
+            </div>
+        </div>
+    
+    </body>
+</html>
