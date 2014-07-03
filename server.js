@@ -1,5 +1,5 @@
 /*
-* Dependencies: 
+* Dependencies:
 * npm install express cpmmect body-parser method-override fs path vhost express.io
 *
 *
@@ -12,7 +12,7 @@ var methodOverride  = require('method-override'); // Middleware that simulates D
 var fs              = require('fs'); // Read and write to files through nodejs.
 var path            = require('path'); // Useful for manipulating strings that reference paths to files.
 
-var router          = express.Router(); 
+var router          = express.Router();
 var vhost           = require('vhost');
 
 var app             = require('express.io')();
@@ -23,23 +23,25 @@ app.http().io(); // Initialize the server.
 /*
  * Configure the server.
  */
-// parse application/x-www-form-urlencoded
+
+// Parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded());
 
-// parse application/json
+// Parse application/json
 app.use(bodyParser.json());
 
-app.use(methodOverride());
+// Simulate HTTP DELETE and PUT.
+//app.use(methodOverride());
 
 app.listen(port); // Listen through the specified port.
-app.enable('trust proxy');
+//app.enable('trust proxy'); // Enables reverse proxy support Default: false
 
 /*
  * Setup the website.
  */
 
 // This app is routed to a variable called home called home calling express.io. You can host multiple websites by following home as a template.
-var home = require('express.io')(); 
+var home = require('express.io')();
 
 // This has to be relative to where your html files are located, etc. In this case it is in App.
 home.use('/js', express.static(__dirname + '/app/js'));

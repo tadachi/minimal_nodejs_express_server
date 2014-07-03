@@ -1,4 +1,4 @@
-barebones_server
+mimimal_nodejs_express_server
 ================
 
 This is a small nodejs webserver using express framework.
