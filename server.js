@@ -1,6 +1,6 @@
 /*
 * Dependencies:
-* npm install express cpmmect body-parser method-override fs path vhost express.io
+* npm install express connect body-parser method-override path vhost express.io
 *
 *
 */
