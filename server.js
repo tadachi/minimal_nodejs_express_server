@@ -11,10 +11,8 @@ var bodyParser      = require('body-parser'); // Middleware that decodes JSON an
 var methodOverride  = require('method-override'); // Middleware that simulates DELETE (delete specified file on origin server) and PUT (Store file on origin server).
 var fs              = require('fs'); // Read and write to files through nodejs.
 var path            = require('path'); // Useful for manipulating strings that reference paths to files.
-
 var router          = express.Router();
 var vhost           = require('vhost');
-
 var app             = require('express.io')();
 var port            = parseInt(process.env.PORT, 10) || 4000;
 
@@ -53,7 +51,7 @@ app.listen(port); // Listen through the specified port.
  * Setup the website.
  */
 
-// This app is routed to a variable called home called home calling express.io. You can host multiple websites by following home as a template.
+// This app is routed to a variable calling express.io. You can host multiple websites by following the following as a template.
 var home = require('express.io')();
 
 // This has to be relative to where your html files are located, etc. In this case it is in App.
