@@ -2,15 +2,12 @@
 * Dependencies:
 * npm install express connect body-parser method-override path vhost express.io
 *
-*
+* or 'npm install' using the package.json
 */
 
 var express         = require('express');
-
 var bodyParser      = require('body-parser'); // Middleware that decodes JSON and POST parameters
 var methodOverride  = require('method-override'); // Middleware that simulates DELETE (delete specified file on origin server) and PUT (Store file on origin server).
-var fs              = require('fs'); // Read and write to files through nodejs.
-var path            = require('path'); // Useful for manipulating strings that reference paths to files.
 var router          = express.Router();
 var vhost           = require('vhost');
 var app             = require('express.io')();
