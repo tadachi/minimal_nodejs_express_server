@@ -1,8 +1,8 @@
 {
-	"name": "minimal_node_js_server",
-	"main": "server.js",
-	"dependencies": {
-		"express": "~4.0.0",
+    "name": "minimal_node_js_server",
+    "main": "server.js",
+    "dependencies": {
+        "express": "~4.0.0",
         "body-parser":"~1.9.0",
         "method-override":"~2.2.0",
         "express.io":"~1.1.13",
@@ -10,5 +10,5 @@
         "router":"~0.6.2",
         "socket.io":"~1.1.0",
         "vhost":"~3.0.0"
-	}
+    }
 }
